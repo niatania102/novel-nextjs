@@ -44,8 +44,7 @@ const TailwindEditor = () => {
             },
           }}
           onUpdate={({ editor }) => {
-            const json = editor.getJSON();
-            setContent(json);
+            debouncedUpdates(editor);
           }}
         >
           <EditorCommand className="z-50 h-auto max-h-[330px]  w-72 overflow-y-auto rounded-md border border-muted bg-background px-1 py-2 shadow-md transition-all">
